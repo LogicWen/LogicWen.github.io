@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="文康宇的blog">
 <meta property="og:description" content="Java垃圾回收[TOC] Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-07T06:50:15.508Z">
+<meta property="og:updated_time" content="2018-09-07T06:52:27.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test_from_maxiang">
 <meta name="twitter:description" content="Java垃圾回收[TOC] Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
@@ -52,6 +52,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Kangyu Wen</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">文康宇的blog</p>
 		
 
 		<nav class="header-menu">
@@ -110,6 +112,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Kangyu Wen</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>文康宇的blog<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -187,7 +191,7 @@
 <li>方法区中常量引用的对象</li>
 <li>本地方法栈中JNI引用的对象   </li>
 </ul>
-<h2 id="如何进行垃圾回收"><a href="#如何进行垃圾回收" class="headerlink" title="如何进行垃圾回收"></a>如何进行垃圾回收</h2><p>###标记-清除 算法（Mark-Sweep）<br>第一阶段进行标记，第二阶段进行清除，产生了内存碎片</p>
+<h2 id="如何进行垃圾回收"><a href="#如何进行垃圾回收" class="headerlink" title="如何进行垃圾回收"></a>如何进行垃圾回收</h2><h3 id="标记-清除-算法（Mark-Sweep）"><a href="#标记-清除-算法（Mark-Sweep）" class="headerlink" title="标记-清除 算法（Mark-Sweep）"></a>标记-清除 算法（Mark-Sweep）</h3><p>第一阶段进行标记，第二阶段进行清除，产生了内存碎片</p>
 <h3 id="复制算法（Copying）-新生代的方法"><a href="#复制算法（Copying）-新生代的方法" class="headerlink" title="复制算法（Copying）[新生代的方法]"></a>复制算法（Copying）[新生代的方法]</h3><p>按照容量分成两块，把能够活下来的copy，把之前的清零。这个和存活的多少有关。（前提是活的对象少，死的对象多）</p>
 <h3 id="标记-整理算法（Mark-Compact）-老年代的方法"><a href="#标记-整理算法（Mark-Compact）-老年代的方法" class="headerlink" title="标记-整理算法（Mark-Compact）[老年代的方法]"></a>标记-整理算法（Mark-Compact）[老年代的方法]</h3><p>移动对象到一端，然后清理掉端边界以外的对象</p>
 <h3 id="分代算法（因为每次浪费一半的内存，改进了）"><a href="#分代算法（因为每次浪费一半的内存，改进了）" class="headerlink" title="分代算法（因为每次浪费一半的内存，改进了）"></a>分代算法（因为每次浪费一半的内存，改进了）</h3><p>Eden和Survivor1 Survivor2（8:1:1）<br>新生代是minorGC<br>当Survivor2空间不够，则以来其他内存（放入老年代）</p>
