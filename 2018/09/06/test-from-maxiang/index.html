@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>test_from_maxiang | 文康宇的blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#Java垃圾回收[TOC] ##Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
+  <meta name="description" content="Java垃圾回收[TOC] Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test_from_maxiang">
 <meta property="og:url" content="http://yoursite.com/2018/09/06/test-from-maxiang/index.html">
 <meta property="og:site_name" content="文康宇的blog">
-<meta property="og:description" content="#Java垃圾回收[TOC] ##Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
+<meta property="og:description" content="Java垃圾回收[TOC] Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-06T09:22:58.765Z">
+<meta property="og:updated_time" content="2018-09-07T06:50:15.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test_from_maxiang">
-<meta name="twitter:description" content="#Java垃圾回收[TOC] ##Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
+<meta name="twitter:description" content="Java垃圾回收[TOC] Java对象的内存布局mark word（对象头） –&amp;gt; class point（类指针，指向类的数据） –&amp;gt; instance data（对象的数据） –&amp;gt;padding（对齐填充，8个字节对齐的）32位系统中refrence是四个字节，64位中的是八个字节 Java是通引用来访问对象的。 某个方法，先找到这个对象，再找这个对象的类，再找父类。">
   
     <link rel="alternative" href="/atom.xml" title="文康宇的blog" type="application/atom+xml">
   
@@ -174,13 +174,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Java垃圾回收<br>[TOC]</p>
-<p>##Java对象的内存布局<br>mark word（对象头） –&gt; class point（类指针，指向类的数据） –&gt; instance data（对象的数据） –&gt;padding（对齐填充，<strong>8个字节</strong>对齐的）<br>32位系统中refrence是四个字节，64位中的是八个字节</p>
+        <h1 id="Java垃圾回收"><a href="#Java垃圾回收" class="headerlink" title="Java垃圾回收"></a>Java垃圾回收</h1><p>[TOC]</p>
+<h2 id="Java对象的内存布局"><a href="#Java对象的内存布局" class="headerlink" title="Java对象的内存布局"></a>Java对象的内存布局</h2><p>mark word（对象头） –&gt; class point（类指针，指向类的数据） –&gt; instance data（对象的数据） –&gt;padding（对齐填充，<strong>8个字节</strong>对齐的）<br>32位系统中refrence是四个字节，64位中的是八个字节</p>
 <p>Java是通<strong>引用</strong>来访问对象的。</p>
 <p>某个方法，先找到这个对象，再找这个对象的类，再找父类。<br><a id="more"></a></p>
-<p>##Java早期的GC方法</p>
-<p>###引用计数法<br><strong>缺点：</strong>相互引用 循环引用不行</p>
-<p>##Java根节点可达性分析<br>一开始是这个方法<br>从GC Roots找。</p>
+<h2 id="Java早期的GC方法"><a href="#Java早期的GC方法" class="headerlink" title="Java早期的GC方法"></a>Java早期的GC方法</h2><h3 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h3><p><strong>缺点：</strong>相互引用 循环引用不行</p>
+<h2 id="Java根节点可达性分析"><a href="#Java根节点可达性分析" class="headerlink" title="Java根节点可达性分析"></a>Java根节点可达性分析</h2><p>一开始是这个方法<br>从GC Roots找。</p>
 <p><strong>那些对象可以作为根节点？</strong></p>
 <ul>
 <li>虚拟机栈中引用对象（局部变量表）</li>
@@ -188,11 +187,10 @@
 <li>方法区中常量引用的对象</li>
 <li>本地方法栈中JNI引用的对象   </li>
 </ul>
-<p>##如何进行垃圾回收</p>
-<p>###标记-清除 算法（Mark-Sweep）<br>第一阶段进行标记，第二阶段进行清除，产生了内存碎片</p>
-<p>###复制算法（Copying）[新生代的方法]<br>按照容量分成两块，把能够活下来的copy，把之前的清零。这个和存活的多少有关。（前提是活的对象少，死的对象多）</p>
-<p>###标记-整理算法（Mark-Compact）[老年代的方法]<br>移动对象到一端，然后清理掉端边界以外的对象</p>
-<p>###分代算法（因为每次浪费一半的内存，改进了）<br>Eden和Survivor1 Survivor2（8:1:1）<br>新生代是minorGC<br>当Survivor2空间不够，则以来其他内存（放入老年代）</p>
+<h2 id="如何进行垃圾回收"><a href="#如何进行垃圾回收" class="headerlink" title="如何进行垃圾回收"></a>如何进行垃圾回收</h2><p>###标记-清除 算法（Mark-Sweep）<br>第一阶段进行标记，第二阶段进行清除，产生了内存碎片</p>
+<h3 id="复制算法（Copying）-新生代的方法"><a href="#复制算法（Copying）-新生代的方法" class="headerlink" title="复制算法（Copying）[新生代的方法]"></a>复制算法（Copying）[新生代的方法]</h3><p>按照容量分成两块，把能够活下来的copy，把之前的清零。这个和存活的多少有关。（前提是活的对象少，死的对象多）</p>
+<h3 id="标记-整理算法（Mark-Compact）-老年代的方法"><a href="#标记-整理算法（Mark-Compact）-老年代的方法" class="headerlink" title="标记-整理算法（Mark-Compact）[老年代的方法]"></a>标记-整理算法（Mark-Compact）[老年代的方法]</h3><p>移动对象到一端，然后清理掉端边界以外的对象</p>
+<h3 id="分代算法（因为每次浪费一半的内存，改进了）"><a href="#分代算法（因为每次浪费一半的内存，改进了）" class="headerlink" title="分代算法（因为每次浪费一半的内存，改进了）"></a>分代算法（因为每次浪费一半的内存，改进了）</h3><p>Eden和Survivor1 Survivor2（8:1:1）<br>新生代是minorGC<br>当Survivor2空间不够，则以来其他内存（放入老年代）</p>
 <p>当Eden满了之后，清算eden和survivor两个区域里面的对象</p>
 <p>当<strong>年老代满了，</strong>将会进行一次full GC。</p>
 <p><strong>存入年老代的对象：</strong>1.放不下了 2.经过了很多次minor GC</p>
@@ -201,11 +199,10 @@
 <blockquote>
 <p>废弃无用的常量（常量池中的“abc”已经没有被任何字符串引用）<br>无用的类（所有实例都被回收 or   加载该类的classloader被回收 or  Class对象没有任何地方被引用，无法在任何地方通过反射访问该类的方法 ）<br><strong>垃圾回收的性价比比较低</strong></p>
 </blockquote>
-<p>###对象分配和垃圾回收<br><strong>对象优先在新生代Eden分配，</strong>新生代minorGC的速度快，而且频繁，性价比高<br><strong>大对象直接进入老年代：</strong>通过-XX:PretenureSizeThreshold控制<br><strong>长期存活对象进入老年代：</strong>age &gt; MaxTenuringThreshold（minorGC一次，年龄加1，默认是<strong>15</strong>）<br><strong>动态年龄判断：</strong> 当某个年龄的对象个数大于该survivor空间的一半，大于等于该年龄对象直接进入老年代</p>
+<h3 id="对象分配和垃圾回收"><a href="#对象分配和垃圾回收" class="headerlink" title="对象分配和垃圾回收"></a>对象分配和垃圾回收</h3><p><strong>对象优先在新生代Eden分配，</strong>新生代minorGC的速度快，而且频繁，性价比高<br><strong>大对象直接进入老年代：</strong>通过-XX:PretenureSizeThreshold控制<br><strong>长期存活对象进入老年代：</strong>age &gt; MaxTenuringThreshold（minorGC一次，年龄加1，默认是<strong>15</strong>）<br><strong>动态年龄判断：</strong> 当某个年龄的对象个数大于该survivor空间的一半，大于等于该年龄对象直接进入老年代</p>
 <p>GC的时候会<strong>Stop the world!</strong></p>
 <p><strong>HandlerPromotionFailure</strong>对象分配担保。</p>
-<p>##垃圾回收的实现</p>
-<blockquote>
+<h2 id="垃圾回收的实现"><a href="#垃圾回收的实现" class="headerlink" title="垃圾回收的实现"></a>垃圾回收的实现</h2><blockquote>
 <p><strong>Serial/Serial Old</strong>（串行）   stop the world GC线程是单线程的<br><strong>Parnew</strong>（并行）也需要暂停用户线程，只是多个线程进行垃圾回收， 添加了一个safepoint<br><strong>Parallel Scavenge/Parallel Old</strong>（吞吐量优先的）<br><strong>CMS</strong>（最短回收）[初始标记 并发标记 重新标记 并发清理 重置线程]<br><strong>G1</strong>（面向服务端应用的来讲收集器，采用<strong>标记-整理算法</strong>）[G1收集器可以独立管理两个代的GC]</p>
 </blockquote>
 <p><strong>JVM的两种运行模式：</strong>client 和 server 模式</p>

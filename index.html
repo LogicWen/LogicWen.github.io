@@ -172,8 +172,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Java垃圾回收<br>[TOC]</p>
-<p>##Java对象的内存布局<br>mark word（对象头） –&gt; class point（类指针，指向类的数据） –&gt; instance data（对象的数据） –&gt;padding（对齐填充，<strong>8个字节</strong>对齐的）<br>32位系统中refrence是四个字节，64位中的是八个字节</p>
+        <h1 id="Java垃圾回收"><a href="#Java垃圾回收" class="headerlink" title="Java垃圾回收"></a>Java垃圾回收</h1><p>[TOC]</p>
+<h2 id="Java对象的内存布局"><a href="#Java对象的内存布局" class="headerlink" title="Java对象的内存布局"></a>Java对象的内存布局</h2><p>mark word（对象头） –&gt; class point（类指针，指向类的数据） –&gt; instance data（对象的数据） –&gt;padding（对齐填充，<strong>8个字节</strong>对齐的）<br>32位系统中refrence是四个字节，64位中的是八个字节</p>
 <p>Java是通<strong>引用</strong>来访问对象的。</p>
 <p>某个方法，先找到这个对象，再找这个对象的类，再找父类。<br>
         
