@@ -297,6 +297,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/09/14/测试feed/",
+  owner: 'LogicWen',
+  repo: 'LogicWen.github.io',
+  oauth: {
+    client_id: '9b54bd64d47406a21da1',
+    client_secret: '729a0050241351d6a069630c25a7e6a3e7e2dc7c',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
