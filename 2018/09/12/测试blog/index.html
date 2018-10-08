@@ -320,20 +320,27 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2018/09/12/测试blog/",
-  owner: 'LogicWen',
-  repo: 'LogicWen.github.io',
-  oauth: {
-    client_id: '9b54bd64d47406a21da1',
-    client_secret: '729a0050241351d6a069630c25a7e6a3e7e2dc7c',
-  },
+
+
+
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '9b54bd64d47406a21da1',
+  	clientSecret: '729a0050241351d6a069630c25a7e6a3e7e2dc7c',
+  	repo: 'LogicWen.github.io',
+  	owner: 'LogicWen',
+  	admin: ['Ziven-n'],
+  	id: 'Wed Sep 12 2018 15:30:16 GMT+0800',
+  	distractionFreeMode: 'true'
 })
-gitment.render('gitment-ctn')
+gitalk.render('gitalk-container') 
+}
 </script>
   
 
